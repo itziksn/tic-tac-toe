@@ -116,12 +116,12 @@ function minimax(cell_index, maximizingPlayer, alpha, beta) {
         continue;
       if(maximizingPlayer)
       {
-        result = Math.min(minimax(i, !maximizingPlayer), result)
+        result = Math.min(minimax(i, !maximizingPlayer, alpha, beta), result)
         alpha = Math.min(alpha, result);
       }
       else
       {
-        result = Math.max(minimax(i, !maximizingPlayer), result);
+        result = Math.max(minimax(i, !maximizingPlayer, alpha, beta), result);
         beta = Math.max(beta, result);
       }
       if(alpha >= beta)
